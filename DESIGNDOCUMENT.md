@@ -13,9 +13,13 @@
     - This function peforms a series of checks to ensure that it works as expected.
     - Assert() evaluates its argument and calls abort() if the result is zero.
 
+    ![alt journalingpart.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/journalingpart.png)
+
 > PartOps
 
     - Entering models and data AMPL maintains a ‘‘current’’ model, which is the one that will be sent to the solver if you type solve. At the beginning of an interactive session, the current model is empty. A model command reads declarations from a file and adds them to the current model; a data command reads data statements from a file to supply values for components already in the current model. Thus you may use several model or data commands to build up the description of an optimization problem, reading data from different files. You can also type parts of a model and its data directly at an AMPL prompt. Model declarations such as param, var and subject to act as commands that add components to the current model.
+
+    ![alt partops.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/partops.png)
 
 > Dllmain
 
@@ -26,9 +30,13 @@
         Their async versions: 
             amplpy.AMPL.eval_async() / evalAsync(), amplpy.AMPL.read_async() / readAsync() and amplpy.AMPL.read_data_async() / readDataAsync(), permit the calling program to continue the execution while the underlying AMPL process is busy in some time consuming operation, and to define a callback to be executed when the operation is over.
     
+    ![alt dllmain.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/dllmain.png)
+    
 > Journaling session
 
-    - Set a callback for AMPL async operation implementation (amp1::Runnable) start and interrupt async operations
+    - Set a callback for AMPL async operation implementation (amp1::Runnable) start and interrupt async operations.
+
+    ![alt Journaling_session.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/Journaling_session.png)
 
 ## Automotion Binding
 
@@ -39,14 +47,20 @@
     - Although all assert conditions ultimately must evaluate to a Boolean result of TRUE or FALSE, it can be tedious to constantly reduce every expression to this form. The xUnits offer a variety of assert functions to help. 
     - This assert method has variants that take a message parameter to describe the failure, as shown above. The assertEquals() method has variants that take different data types as arguments.
 
+    ![alt wirebuilder.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/wirebuilder.png)
+
  > FeatureCollection
 
     - The expected error behavior is that an exception is thrown when the removeBook( ) where the method is called for a nonexistent Book. If the exception is thrown, the unit test succeeds. If it is not thrown, fail() is called. The fail( ) method is another useful variation on the basic assert method. It is equivalent to assertTrue(false), but it reads better.
+
+    ![alt FeatureCollection.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/FeatureCollection.png)
     
 > RootingCollection
 
     - This unit test uses fail() to cause the test to fail when an unexpected exception is thrown. The exception’s message attribute is used as the assert message.
-    - The same general pattern is followed to test expected error behavior that is not represented by an exception: the test fails if the error is not seen and succeeds if it is. 
+    - The same general pattern is followed to test expected error behavior that is not represented by an exception: the test fails if the error is not seen and succeeds if it is.
+
+    ![alt routingcollection.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/routingcollection.png)
 
 > Extrude
 
@@ -62,7 +76,7 @@
             // Assert
             Assert.AreEqual("Morning", timeOfDay);
         }
-    - Is the caller’s responsibility to provide date and time to the GetTimeOfDay(DateTime dateTime) method, meaning that they could become untestable if we don’t pay enough attention
+    - Is the caller’s responsibility to provide date and time to the GetTimeOfDay(DateTime dateTime) method, meaning that they could become untestable if we don’t pay enough attention.
 
 > BlockBuilder
 
@@ -80,19 +94,25 @@
     - The return typeof CompletableFuture<APOD> makes this an asynchronous client. Square with provide other adapters or you could write your own. Having an interface like this helps mocking the client for tests.
     - After declaring the interface we ask Retrofit to create an implementation which we can use to make requests against a given base URL. It’s also helpful for integration testing to be able to switch the base URL.
 
+
 ## Journaling
 
 > JournalingCallData
 
     - If there are multiple methods in our interface which all need an API key it is possible to configure that by adding an HttpInterceptor to the base  OkHttp.client . The custom client can be added to the Retrofit.Builder.
 
+    ![alt JournalCallData.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/JournalCallData.png)
+
 > JournalCallParamDataClass
 
-    - HttpClient accepts a BodyHandler which can convert an HTTP response into a class of your choosing. There are some built-in handlers: String, byte[] for binary data, Stream<String> which splits by lines, and a few others. You can also define your own, which might be helpful as there isn’t a built-in BodyHandler for parsing JSON.The code returns a Supplier for the APOD class, so we call .get() when we need the result
+    - HttpClient accepts a BodyHandler which can convert an HTTP response into a class of your choosing. There are some built-in handlers: String, byte[] for binary data, Stream<String> which splits by lines, and a few others. You can also define your own, which might be helpful as there isn’t a built-in BodyHandler for parsing JSON.The code returns a Supplier for the APOD class, so we call .get() when we need the result.
+
+    ![alt JournalCallParamDataClass.png UML Diagram](https://github.com/aalluinmar/SA_Final_Application/tree/main/UML_Diagrams/JournalCallParamDataClass.png)
 
 > JournalFile
 
     - We are able to perform both state-based and interaction-based unit tests for it. Again, notice that in addition to improved testability, introducing a seam between the decision-making and action code helped to solve the tight coupling problem, and led to a cleaner, reusable API.
+
 
 > Journaling.cpp
 
